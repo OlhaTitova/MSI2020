@@ -1,0 +1,137 @@
+@import "./normalize.css";
+
+body{
+    font-family: "Roboto", arial, sans-serif;
+    font-style: normal;
+    color: #333333;
+    font-size: 18px;
+    line-height: 26px;
+}
+
+h1{
+    font-size: 32px;
+}
+
+h3{
+    font-size: 24px;
+    font-weight: 500;
+    padding-bottom: 1%;
+}
+
+.container {
+    max-width: 710px;
+    margin: 0  auto;
+    padding: 0 15px;
+}
+
+.page {
+    display: flex;
+    box-sizing: border-box;
+    height: 100vh;
+}
+
+.main-container {
+    flex: 1 1;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo{
+    font-size: 24px;
+    line-height: 44px;
+}
+
+.favorite-toggle {
+    display: none;
+}
+
+.form-check-input {
+    cursor:pointer;
+    border: 2px solid #ABABAB;
+    box-sizing: border-box;
+}
+
+.search {
+    width: 100%;
+    height: 42px;
+    border: 2px solid #333333;
+    box-sizing: border-box;
+    border-radius: 10px;
+    color: #ABABAB;
+    font-size: 16px;
+    margin-top: 20px;
+    padding: 10px 15px;
+    /*display: none;*/
+}
+
+.buttons{
+    margin: 20px 10px;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-family: Roboto;
+    font-style: normal;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    /*display: none;*/
+}
+
+.buttonB{
+    margin-top: 20px;
+    margin-bottom: 40px;
+    padding: 5px 10px;
+    background:linear-gradient(92.01deg, #8EA7FF 0%, #7291FF 100%);
+    border-radius: 10px;
+    width: 152px;
+    height: 42px;
+    color: #ffffff;
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 22px;
+}
+
+.joke{
+    background: #f00;
+    border-radius: 20px;
+    width: 99%;
+    height: 39%;
+    padding: 1%;
+    height: 100px;
+}
+
+.reactangle2{
+    background: #FFFFFF;
+    border: 1px solid #F8F8F8;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    height: 100px;
+    margin: 0 0 20px;
+}
+
+.Favourite {
+    color: #ABABAB;
+    font-weight: 500;
+    padding-bottom: 2%;
+}
+
+.aside{
+    background: #F8F8F8;
+    flex: 0 2 480px;
+    padding: 40px;
+}
+
+@media (width: 720px) {
+
+}
+
+@media (min-width: 576px) {
+
+}
