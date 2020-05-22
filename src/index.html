@@ -4,8 +4,7 @@
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" href="./css/style.css">
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
   <title>MSI 2020 Front-end Development Test</title>
 </head>
 
@@ -14,79 +13,122 @@
     <div class="main-container">
       <header>
         <div class="container header">
-          <h2 class="logo">MSI 2020</h2>
+          <h3 class="logo">MSI 2020</h3>
           <button class="favorite-toggle">Favorite</button>
         </div>
       </header>
 
       <main>
         <div class="container">
-          <h1>Hey!</h1>
-          <h3>Let's try to find a joke for you:</h3>
+          <section>
+            <h1>Hey!</h1>
+            <h2>Let's try to find a joke for you:</h2>
 
-          <form action="">
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="Radios" id="Radios1" value="option1" checked>
-              <label class="form-check-label" for="Radios1">
-                Random
-              </label>
-            </div>
+            <form action="">
+              <ul>
+                <li>
+                  <input type="radio" id="random" name="Radios" checked>
+                  <label for="random">Random</label>
+                  <div class="check"></div>
+                </li>
 
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="Radios" id="Radios2" value="option2">
-              <label class="form-check-label" for="Radios2">
-                From categories
-              </label>
-            </div>
+                <li>
+                  <input type="radio" id="categories" name="Radios">
+                  <label for="categories">From categories</label>
+                  <div class="check"></div>
+                </li>
 
-            <div class="btn-group" role="group">
-              <button type="button" class="buttons">Animal</button>
-              <button type="button" class="buttons">Career</button>
-              <button type="button" class="buttons">Celebrity</button>
-              <button type="button" class="buttons">Dev</button>
-            </div>
+                <!-------- Radios as button--->
 
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="Radios" id="Radios3" value="option3">
-              <label class="form-check-label" for="Radios3" for="Search">
-                Search
-              </label>
-            </div>
-          </form>
+                <div class="radios-as-btn">
+                  <input type="radio" name="option" id="Animal" value="1" checked>
+                  <label for="Animal">Animal</label>
+                </div>
 
-          <div>
-            <form action="" method="post">
-              <input class="search" type="search" id="Search" placeholder="Free text search...">
-            </form>
-          </div>
+                <div class="radios-as-btn">
+                  <input type="radio" name="option" id="Career" value="2">
+                  <label for="Career">Career</label>
+                </div>
 
-          <button class="buttonB" type="submit">
-            Get a joke
-          </button>
+                <div class="radios-as-btn">
+                  <input type="radio" name="option" id="Celebrity" value="3">
+                  <label for="Celebrity">Celebrity</label>
+                </div>
 
-          <div class="joke"> </div>
+                <div class="radios-as-btn">
+                  <input type="radio" name="option" id="Dev" value="4">
+                  <label for="Dev">Dev</label>
+                </div>
+                <!---------------------------->
 
+                <li>
+                  <input type="radio" id="search" name="Radios">
+                  <label for="search">Search</label>
+                  <div class="check"></div>
+                </li>
+
+                <div>
+                  <form action="" method="post">
+                    <input class="search" type="search" id="Search" placeholder="Free text search...">
+                  </form>
+                </div>
+              </ul>
+
+              <button class="buttonB" type="submit">
+                Get a joke
+              </button>
+
+              <div class="joke">
+
+                <img class="heart" src="img/Vector.svg" height="17" weight="20" alt="Heart">
+
+
+                <div class="sms-main">
+                  <div class="sms">
+                    <img src="img/sms.svg" alt="sms">
+
+                    <div class="line1">
+                      <img src="img/line1.svg" alt="line1">
+                    </div>
+                    <div class="line2">
+                      <img src="img/line2.svg" alt="line2">
+                    </div>
+                    <div class="line3">
+                      <img src="img/line3.svg" alt="line3">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="link-id">ID:1111111111111111111</div>
+                <div class="joke-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi doloribus
+                  cupiditate repellat quaerat! Adipisci id, dolorum, quaerat explicabo voluptas nulla ullam fugiat quasi
+                  atque obcaecati libero rem possimus consequatur minima.</div>
+
+
+              </div>
+          </section>
         </div>
 
       </main>
     </div>
+
     <aside class="aside">
-      <h2 class="Favorite">Favourite</h2>
+      <h3 class="favorite">Favourite</h3>
 
-      <div class="reactangle2">
+      <div class="favorite-joke">
+      </div>
+
+      <div class="favorite-joke">
 
       </div>
 
-      <div class="reactangle2">
-
-      </div>
-
-      <div class="reactangle2">
+      <div class="favorite-joke">
 
       </div>
 
     </aside>
   </div>
+
 </body>
 
 </html>

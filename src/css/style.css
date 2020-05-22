@@ -1,5 +1,13 @@
 @import "./normalize.css";
 
+* {
+    -webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+    user-select: none;
+}
+
 body{
     font-family: "Roboto", arial, sans-serif;
     font-style: normal;
@@ -12,16 +20,15 @@ h1{
     font-size: 32px;
 }
 
-h3{
+h2{
     font-size: 24px;
     font-weight: 500;
-    padding-bottom: 1%;
 }
 
 .container {
-    max-width: 710px;
+    max-width: 760px;
     margin: 0  auto;
-    padding: 0 15px;
+    padding: 40px;
 }
 
 .page {
@@ -41,18 +48,116 @@ h3{
 }
 
 .logo{
-    font-size: 24px;
-    line-height: 44px;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 28px;
+    margin: 0;
 }
 
 .favorite-toggle {
     display: none;
 }
 
-.form-check-input {
-    cursor:pointer;
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul li{
+    position: relative;
+    width: 170px;
+}
+
+ul li input[type=radio]{
+    position: absolute;
+    visibility: hidden;
+}
+
+ul li label{
+    display: block;
+    position: relative;
+    padding: 2.5px 2.5px 2.5px 35px;
+    margin: 2.5px auto;
+    z-index: 9;
+    cursor: pointer;
+      
+    -webkit-transition: all 0.25s linear;
+    -moz-transition: all 0.25s linear;
+    -o-transition: all 0.25s linear;
+    transition: all 0.25s linear;
+}
+
+ul li .check{
+    display: block;
+    position: absolute;
     border: 2px solid #ABABAB;
     box-sizing: border-box;
+    border-radius: 100%;
+    height: 20px;
+    width: 20px;
+    top: 5px;
+    z-index: 5;
+      
+      transition: border .25s linear;
+      -webkit-transition: border .25s linear;
+      -moz-transition: border 0.25s linear;
+      -o-transition: border 0.25s linear;
+}
+
+ul li .check::before {
+    display: block;
+    position: absolute;
+    content: '';
+    border-radius: 100%;
+    height: 10px;
+    width: 10px;
+    top: 3px;
+    left: 3px;
+    margin: auto;
+
+      transition: background 0.25s linear;
+      -webkit-transition: background 0.25s linear;
+      -moz-transition: border 0.25s linear;
+      -o-transition: border 0.25s linear;
+}
+
+input[type=radio]:checked ~ .check {
+    border: 2px solid #333;
+}
+
+input[type=radio]:checked ~ .check::before{
+    background: #333;
+}
+
+.radios-as-btn {
+    display: inline-block;
+    margin-right: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px; 
+}
+
+.radios-as-btn input[type=radio] {
+    display: none;
+}
+
+.radios-as-btn label {
+    cursor: pointer;
+    padding: 6px 15px 6px 15px;
+    font-size: 12px;
+    line-height: 16px;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 2px;
+    color: #ABABAB;
+    border: 2px solid #f8f8f8;
+    border-radius: 6px;
+    
+}
+
+.radios-as-btn input[type=radio]:checked + label {
+    background: #f8f8f8;
+    color: #333333;
 }
 
 .search {
@@ -65,20 +170,6 @@ h3{
     font-size: 16px;
     margin-top: 20px;
     padding: 10px 15px;
-    /*display: none;*/
-}
-
-.buttons{
-    margin: 20px 10px;
-    padding: 4px 10px;
-    border-radius: 6px;
-    font-family: Roboto;
-    font-style: normal;
-    font-size: 12px;
-    line-height: 16px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    /*display: none;*/
 }
 
 .buttonB{
@@ -90,48 +181,106 @@ h3{
     width: 152px;
     height: 42px;
     color: #ffffff;
-    font-family: "Roboto";
-    font-style: normal;
     font-weight: bold;
     font-size: 16px;
     line-height: 22px;
 }
 
 .joke{
-    background: #f00;
+    background: #F8F8F8;
     border-radius: 20px;
-    width: 99%;
-    height: 39%;
-    padding: 1%;
+    position: relative;
     height: 100px;
 }
 
-.reactangle2{
+.heart {
+    float: right;
+    line-height: 0;
+    height: 17px;
+    width: 20px; 
+    margin: 40px 40px 0 0;
+}
+
+.sms-main {
+    background-color: #ffffff;
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+    float: left;
+    margin: 67px 20px 0 40px;
+}
+
+.sms {
+    margin-top: 11px;
+    margin-left: 10px;
+    line-height: 0;
+    position: absolute;
+    width: 20px;
+}
+
+.line1, .line2, .line3 {
+    margin-left: 5px;
+    position: absolute;
+}
+
+.line1 {
+    margin-top: -18.3px;;
+}
+
+.line2 {
+    margin-top: -17px;
+}
+
+.line3 {
+    margin-top: -13.44px;
+}
+
+.link-id {
+
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 14px;
+    float: left;
+    margin: 67px 0 5px 0;
+}
+
+.joke-text {
+    float: left;
+    width: 75%;
+    
+}
+
+.aside{
+    background: #F8F8F8;
+    flex: 0 2 400px;
+    padding: 40px;
+}
+
+.favorite {
+    color: #ABABAB;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 28px;
+    margin: 0 0 20px;
+}
+
+.favorite-joke{
     background: #FFFFFF;
     border: 1px solid #F8F8F8;
     box-sizing: border-box;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-    height: 100px;
+    height: 180px;
     margin: 0 0 20px;
+    
 }
 
-.Favourite {
-    color: #ABABAB;
-    font-weight: 500;
-    padding-bottom: 2%;
+@media (max-width: 768px) {
+.favorite-toggle {
+    
+}
 }
 
-.aside{
-    background: #F8F8F8;
-    flex: 0 2 480px;
-    padding: 40px;
-}
-
-@media (width: 720px) {
-
-}
-
-@media (min-width: 576px) {
+@media (max-width: 480px) {
 
 }
