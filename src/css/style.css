@@ -152,7 +152,6 @@ input[type=radio]:checked ~ .check::before{
     color: #ABABAB;
     border: 2px solid #f8f8f8;
     border-radius: 6px;
-    
 }
 
 .radios-as-btn input[type=radio]:checked + label {
@@ -190,15 +189,15 @@ input[type=radio]:checked ~ .check::before{
     background: #F8F8F8;
     border-radius: 20px;
     position: relative;
-    height: 100px;
 }
 
 .heart {
-    float: right;
     line-height: 0;
     height: 17px;
     width: 20px; 
-    margin: 40px 40px 0 0;
+    margin-top: 40px;
+    margin-right: 40px;
+    float: right;
 }
 
 .sms-main {
@@ -206,8 +205,9 @@ input[type=radio]:checked ~ .check::before{
     height: 40px;
     width: 40px;
     border-radius: 100%;
-    float: left;
-    margin: 67px 20px 0 40px;
+    position: absolute;
+    top: 67px;
+    left: 40px;
 }
 
 .sms {
@@ -219,35 +219,56 @@ input[type=radio]:checked ~ .check::before{
 }
 
 .line1, .line2, .line3 {
-    margin-left: 5px;
+    margin-left: -15px;
     position: absolute;
 }
 
 .line1 {
-    margin-top: -18.3px;;
+    margin-top: 4px;
 }
 
 .line2 {
-    margin-top: -17px;
+    margin-top: 6.5px;
 }
 
 .line3 {
-    margin-top: -13.44px;
+    margin-top: 9px;
 }
 
 .link-id {
-
     font-weight: 500;
     font-size: 10px;
     line-height: 14px;
+    color: #ABABAB;
     float: left;
-    margin: 67px 0 5px 0;
+    margin: 67px 0 5px 100px;
+}
+
+.img-id {
+    padding: 0 0 0 5px;
 }
 
 .joke-text {
     float: left;
-    width: 75%;
-    
+    margin: 0 40px 40px 100px;
+}
+
+.time {
+    font-size: 10px;
+    line-height: 14px;
+    color: #ABABAB;
+    clear: left;
+    margin-left: 100px;
+    padding-bottom: 40px;
+}
+
+#Animal-joke {
+    background-color: #fff;
+}
+
+.category {
+    float: right;
+    margin: 0 40px 40px 0;
 }
 
 .aside{
@@ -256,7 +277,7 @@ input[type=radio]:checked ~ .check::before{
     padding: 40px;
 }
 
-.favorite {
+.favorite-h {
     color: #ABABAB;
     font-weight: 500;
     font-size: 20px;
@@ -264,23 +285,85 @@ input[type=radio]:checked ~ .check::before{
     margin: 0 0 20px;
 }
 
-.favorite-joke{
+.favorite-joke {
     background: #FFFFFF;
     border: 1px solid #F8F8F8;
     box-sizing: border-box;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-    height: 180px;
     margin: 0 0 20px;
-    
+    position: relative;
 }
 
-@media (max-width: 768px) {
+.background-color {
+    background-color: #F8F8F8;
+    top: 47px;
+    left: 20px;
+}
+
+.line4, .line5, .line6 {
+    margin-left: -15px;
+    position: absolute;
+}
+
+.line4 {
+    margin-top: 4px;
+}
+
+.line5 {
+    margin-top: 6px;
+}
+
+.line6 {
+    margin-top: 9px;
+}
+
+#heart-favorite {
+    margin: 20px 20px 0 0;
+}
+
+.favorite-id {
+    margin: 47px 0 5px 80px;
+}
+
+.favorite-text {
+    margin: 0 20px 20px 80px;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.favorite-time {
+    margin-left: 80px;
+    padding-bottom: 20px;
+}
+
+@media (max-width: 991px) {
+.img-favorit-toggle {  
+    display: block;
+    width: 25px;
+    height: 25px;
+    float: left;
+}
+
 .favorite-toggle {
-    
-}
+    color: #ABABAB;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 28px;
+    display: inline;
+    background-color: transparent;
+    border-width: 0;
 }
 
-@media (max-width: 480px) {
+.aside {
+    display: none;
+}
+
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+}
+@media (max-width: 767px) {
 
 }

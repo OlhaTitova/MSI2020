@@ -14,16 +14,17 @@
       <header>
         <div class="container header">
           <h3 class="logo">MSI 2020</h3>
-          <button class="favorite-toggle">Favorite</button>
+          <div>
+            <img src="img/list.svg" class="img-favorit-toggle" alt="favorite-toggle">
+            <button class="favorite-toggle">Favorite</button>
+          </div>
         </div>
       </header>
-
       <main>
         <div class="container">
           <section>
             <h1>Hey!</h1>
             <h2>Let's try to find a joke for you:</h2>
-
             <form action="">
               <ul>
                 <li>
@@ -31,15 +32,12 @@
                   <label for="random">Random</label>
                   <div class="check"></div>
                 </li>
-
                 <li>
                   <input type="radio" id="categories" name="Radios">
                   <label for="categories">From categories</label>
                   <div class="check"></div>
                 </li>
-
                 <!-------- Radios as button--->
-
                 <div class="radios-as-btn">
                   <input type="radio" name="option" id="Animal" value="1" checked>
                   <label for="Animal">Animal</label>
@@ -60,72 +58,65 @@
                   <label for="Dev">Dev</label>
                 </div>
                 <!---------------------------->
-
                 <li>
                   <input type="radio" id="search" name="Radios">
                   <label for="search">Search</label>
                   <div class="check"></div>
                 </li>
-
                 <div>
                   <form action="" method="post">
                     <input class="search" type="search" id="Search" placeholder="Free text search...">
                   </form>
                 </div>
               </ul>
-
               <button class="buttonB" type="submit">
                 Get a joke
               </button>
-
               <div class="joke">
-
                 <img class="heart" src="img/Vector.svg" height="17" weight="20" alt="Heart">
-
-
                 <div class="sms-main">
                   <div class="sms">
                     <img src="img/sms.svg" alt="sms">
-
-                    <div class="line1">
-                      <img src="img/line1.svg" alt="line1">
-                    </div>
-                    <div class="line2">
-                      <img src="img/line2.svg" alt="line2">
-                    </div>
-                    <div class="line3">
-                      <img src="img/line3.svg" alt="line3">
-                    </div>
+                    <img class="line1" src="img/line1.svg" alt="line1">
+                    <img class="line2" src="img/line2.svg" alt="line2">
+                    <img class="line3" src="img/line3.svg" alt="line3">
                   </div>
                 </div>
-
-                <div class="link-id">ID:1111111111111111111</div>
+                <div class="link-id">ID: 1111111111111111111<img class=img-id src="img/icon-open-page.svg" height="10"
+                    weight="10">
+                </div>
                 <div class="joke-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi doloribus
-                  cupiditate repellat quaerat! Adipisci id, dolorum, quaerat explicabo voluptas nulla ullam fugiat quasi
-                  atque obcaecati libero rem possimus consequatur minima.</div>
-
-
+                  cupiditate repellat quaerat!</div>
+                <div class="time">Last update: 1923 hours ago
+                  <span class="radios-as-btn category">
+                    <input type="radio" name="option" id="Animal" value="1" checked>
+                    <label id="Animal-joke" for="Animal">Animal</label>
+                  </span>
+                </div>
               </div>
           </section>
         </div>
-
       </main>
     </div>
-
     <aside class="aside">
-      <h3 class="favorite">Favourite</h3>
-
+      <h3 class="favorite-h">Favorite</h3>
       <div class="favorite-joke">
+        <img class="heart" id="heart-favorite" src="img/heart.svg" height="17" weight="20" alt="Heart">
+        <div class="sms-main background-color">
+          <div class="sms">
+            <img src="img/sms.svg" alt="sms">
+            <img class="line4" src="img/line1.svg" alt="line1">
+            <img class="line5" src="img/line2.svg" alt="line2">
+            <img class="line6" src="img/line3.svg" alt="line3">
+          </div>
+        </div>
+        <div class="link-id favorite-id">ID: 2222222222222222 <img class=img-id src="img/icon-open-page.svg" height="10"
+            weight="10"></div>
+        <div class="joke-text favorite-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi doloribus
+          cupiditate repellat quaerat!</div>
+        <div class="time favorite-time">Last update: 1923 hours ago
+        </div>
       </div>
-
-      <div class="favorite-joke">
-
-      </div>
-
-      <div class="favorite-joke">
-
-      </div>
-
     </aside>
   </div>
 
