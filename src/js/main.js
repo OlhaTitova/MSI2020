@@ -16,7 +16,7 @@ btnSearch.addEventListener('click', () => {
 });
 
 document.addEventListener('keydown', (e) => {
-    if(e.code == 'KeyR' && (e.ctrlKey || e.metaKey)) {
+    if(e.code == 'KeyR') {
         document.location.reload();
     }
 })
@@ -29,17 +29,63 @@ listBtnChoice.addEventListener('click', (e) => {
 })
 
  
-btnGetJoke.addEventListener('click', () => {
+btnGetJoke.addEventListener('click', async () => {
     if (btnRandom.checked){
-        getJokeRandom();
+       await getJokeRandom();
+       changeHeart ()
     }
     if (btnCategory.checked) {
-        getJokeCategory();
+        await getJokeCategory();
+        changeHeart ()
     }
     if(btnSearch.checked) {
-        getJokeSearch ();
+        await getJokeSearch ();
+        changeHeart ()
     }
+
+    
+    
 });
+
+function changeHeart () {
+
+    const heartBox = document.body.querySelectorAll('.heart-box');
+    const heardFull = document.body.querySelector('.heart-full');
+    
+    
+    [].forEach.call(heartBox, heartBox => {
+        console.log(heartBox);
+        heartBox.addEventListener('click', (e) => {
+            console.log(e.target);
+        e.target.toggleAttribute('hidden');
+        // heardFull.setAttribute('hidden', 'false');
+
+    })
+})
+    // const heard = document.body.querySelectorAll('.heart');
+    // console.log(heardFull);
+    
+    
+    // [].forEach.call(heard, (heard) => {
+        
+    //     heard.addEventListener('click', () => {
+            
+            
+    //         [].forEach.call(heardFull, (heardFull) => {
+    //             heard.setAttribute('hidden', 'true');
+    //             heardFull.classList.add('show');
+                
+    //             heardFull.addEventListener('click', () => {
+    //                 console.log(heardFull);
+        
+    //                 heardFull.classList.remove('show');
+    //                 heard.setAttribute('hidden', 'false');
+    //             });
+        
+    //         });
+    //     });
+    // });
+}
 
 
 async function getJokeRandom() {
@@ -52,44 +98,15 @@ async function getJokeRandom() {
 
 
 async function getJokeCategory() {
-  const categoryId =  getCategory();
-  console.log(categoryId);
+
+  let categoryId = document.querySelector('input[name="option"]:checked').value;
+
   const response = await fetch(`https://api.chucknorris.io/jokes/random?category=${categoryId}`);
   const joke = await response.json();
   console.log(joke);
   const cell = document.createElement('div');
   cell.innerHTML = renderCategoryJoke(joke);
   row.appendChild(cell);
-}
-
-
-async function getCategory() {
-
-    const response = await fetch('https://api.chucknorris.io/jokes/categories');
-    const categoriesType = await response.json();
-  
-    console.log(categoriesType);
-     
-    let categoryIdValue = btnGroupCategory.addEventListener('click', (e) => {
-        let categoryId = e.target.id;
-        
-        console.log(categoryId);
-
-        if (e.target.checked) {
-            
-            categoriesType.forEach(element => {
-                
-                if (element === categoryId) {
-                  console.log(categoryId);
-
-                  return categoryId;
-                
-                }
-            });
-        }
-    });
-console.log(categoryIdValue);
-return categoryIdValue;
 }
 
 async function getJokeSearch () {
@@ -106,7 +123,10 @@ async function getJokeSearch () {
 
 function renderRandomJoke(joke) {
   return `<div class="joke">
-      <img class="heart" src="img/Vector.svg" height="17" weight="20" alt="Heart">
+      <div class="heart-box">
+        <img class="heart" src="img/Vector.svg" height="17" weight="20" alt="Heart">
+        <img class="heart-full" src="img/heart.svg" height="17" weight="20" alt="Heart" hidden="true">
+      </div>
       <div class="sms-main">
         <div class="sms">
           <img src="img/sms.svg" alt="sms">
@@ -140,8 +160,8 @@ function renderCategoryJoke(joke) {
       <div class="joke-text">${joke.value}</div>
       <div class="time">${joke.created_at}
         <span class="radios-as-btn category">
-          <input type="radio" name="option" id="${joke.categories.join()}" value="1">
-          <label id="Animal-joke" for="${joke.categories.join()}">${joke.categories.join()}</label>
+          <input type="radio" name="option" id="${joke.categories}" value="1">
+          <label id="Animal-joke" for="${joke.categories}">${joke.categories}</label>
         </span>
       </div>
     </div>`

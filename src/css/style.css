@@ -198,6 +198,14 @@ input[type=radio]:checked~.check::before {
     margin-top: 40px;
     margin-right: 40px;
     float: right;
+    z-index: 2;
+}
+
+.heart-full {
+    position: absolute;
+    right: 40px;
+    top: 40px;
+    z-index: 1;
 }
 
 .sms-main {
