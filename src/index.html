@@ -11,24 +11,29 @@
 <body>
   <div class="page">
     <div class="main-container">
-      <header>
-        <div class="container header">
-          <h3 class="logo">MSI 2020</h3>
-          <div>
-            <img src="img/list.svg" class="img-favorit-toggle" alt="favorite-toggle">
-            <button class="favorite-toggle">Favorite</button>
+      <div class="container">
+
+        <header>
+          <!-- <div class="container"> -->
+          <div class="header">
+            <h3 class="logo">MSI 2020</h3>
+            <div>
+              <img src="img/list.svg" class="img-favorit-toggle" alt="favorite-toggle">
+              <button class="favorite-toggle">Favorite</button>
+            </div>
+            <!-- </div> -->
           </div>
-        </div>
-      </header>
-      <main>
-        <div class="container">
+        </header>
+
+        <main>
+          <!-- <div class="container"> -->
           <section>
             <h1>Hey!</h1>
             <h2>Let's try to find a joke for you:</h2>
             <form action="">
-              <ul>
+              <ul id="joke-search-list">
                 <li>
-                  <input type="radio" id="random" name="Radios" checked>
+                  <input type="radio" id="random" name="Radios" checked="true">
                   <label for="random">Random</label>
                   <div class="check"></div>
                 </li>
@@ -38,24 +43,26 @@
                   <div class="check"></div>
                 </li>
                 <!-------- Radios as button--->
-                <div class="radios-as-btn">
-                  <input type="radio" name="option" id="Animal" value="1" checked>
-                  <label for="Animal">Animal</label>
-                </div>
+                <div id="choice-category" hidden>
+                  <div class="radios-as-btn">
+                    <input type="radio" name="option" id="animal" value="animal">
+                    <label for="animal">Animal</label>
+                  </div>
 
-                <div class="radios-as-btn">
-                  <input type="radio" name="option" id="Career" value="2">
-                  <label for="Career">Career</label>
-                </div>
+                  <div class="radios-as-btn">
+                    <input type="radio" name="option" id="career" value="career">
+                    <label for="career">Career</label>
+                  </div>
 
-                <div class="radios-as-btn">
-                  <input type="radio" name="option" id="Celebrity" value="3">
-                  <label for="Celebrity">Celebrity</label>
-                </div>
+                  <div class="radios-as-btn">
+                    <input type="radio" name="option" id="celebrity" value="celebrity">
+                    <label for="celebrity">Celebrity</label>
+                  </div>
 
-                <div class="radios-as-btn">
-                  <input type="radio" name="option" id="Dev" value="4">
-                  <label for="Dev">Dev</label>
+                  <div class="radios-as-btn">
+                    <input type="radio" name="option" id="dev" value="dev">
+                    <label for="dev">Dev</label>
+                  </div>
                 </div>
                 <!---------------------------->
                 <li>
@@ -63,39 +70,23 @@
                   <label for="search">Search</label>
                   <div class="check"></div>
                 </li>
-                <div>
+
+                <div id="choice-search" hidden>
                   <form action="" method="post">
-                    <input class="search" type="search" id="Search" placeholder="Free text search...">
+                    <input class="search" type="search" id="searchField" placeholder="Free text search...">
                   </form>
                 </div>
               </ul>
-              <button class="buttonB" type="submit">
+
+              <button id="btnGetJoke" class="btn-get" type="submit">
                 Get a joke
               </button>
-              <div class="joke">
-                <img class="heart" src="img/Vector.svg" height="17" weight="20" alt="Heart">
-                <div class="sms-main">
-                  <div class="sms">
-                    <img src="img/sms.svg" alt="sms">
-                    <img class="line1" src="img/line1.svg" alt="line1">
-                    <img class="line2" src="img/line2.svg" alt="line2">
-                    <img class="line3" src="img/line3.svg" alt="line3">
-                  </div>
-                </div>
-                <div class="link-id">ID: 1111111111111111111<img class=img-id src="img/icon-open-page.svg" height="10"
-                    weight="10">
-                </div>
-                <div class="joke-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi doloribus
-                  cupiditate repellat quaerat!</div>
-                <div class="time">Last update: 1923 hours ago
-                  <span class="radios-as-btn category">
-                    <input type="radio" name="option" id="Animal" value="1" checked>
-                    <label id="Animal-joke" for="Animal">Animal</label>
-                  </span>
-                </div>
-              </div>
+
+              <div id="row"></div>
+            </form>
+
           </section>
-        </div>
+      </div>
       </main>
     </div>
     <aside class="aside">
@@ -120,6 +111,7 @@
     </aside>
   </div>
 
+  <script src="./js/main.js"></script>
 </body>
 
 </html>
