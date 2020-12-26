@@ -15,6 +15,10 @@ h3 {
     display: block;
 }
 
+.d-flex {
+    display: flex
+}
+
 body {
     font-family: "Roboto", arial, sans-serif;
     font-style: normal;
@@ -120,26 +124,26 @@ ul li .check::before {
     margin: auto;
 }
 
-input[type=radio]:checked~.check {
+input[name=radios]:checked~.check {
     border: 2px solid #333;
 }
 
-input[type=radio]:checked~.check::before {
+input[name=radios]:checked~.check::before {
     background: #333;
 }
 
-.radios-as-btn {
+.wrap-category {
     display: inline-block;
     margin-right: 10px;
     margin-top: 15px;
     margin-bottom: 15px;
 }
 
-.radios-as-btn input[type=radio] {
+.wrap-category input[name="option"] {
     display: none;
 }
 
-.radios-as-btn label {
+.wrap-category label {
     cursor: pointer;
     padding: 6px 15px 6px 15px;
     font-size: 12px;
@@ -152,7 +156,7 @@ input[type=radio]:checked~.check::before {
     border-radius: 6px;
 }
 
-.radios-as-btn input[type=radio]:checked+label {
+.wrap-category input[name="option"]:checked+label {
     background: #f8f8f8;
     color: #333333;
 }
@@ -189,23 +193,21 @@ input[type=radio]:checked~.check::before {
     border-radius: 20px;
     position: relative;
     margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
 }
 
-.heart {
-    line-height: 0;
-    height: 17px;
-    width: 20px;
+.heard-wrap {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
     margin-top: 40px;
     margin-right: 40px;
-    float: right;
-    z-index: 2;
+
 }
 
 .heart-full {
-    position: absolute;
-    right: 40px;
-    top: 40px;
-    z-index: 1;
+    fill: #FF6767;
 }
 
 .sms-main {
@@ -213,16 +215,14 @@ input[type=radio]:checked~.check::before {
     height: 40px;
     width: 40px;
     border-radius: 100%;
-    position: absolute;
-    top: 67px;
-    left: 40px;
+    margin-left: 40px;
+    margin-right: 20px;
 }
 
 .sms {
     margin-top: 11px;
     margin-left: 10px;
     line-height: 0;
-    position: absolute;
     width: 20px;
 }
 
@@ -250,8 +250,7 @@ input[type=radio]:checked~.check::before {
     font-size: 10px;
     line-height: 14px;
     color: #ABABAB;
-    float: left;
-    margin: 67px 0 5px 100px;
+    margin: 0 0 5px 0;
 }
 
 .img-id {
@@ -259,8 +258,8 @@ input[type=radio]:checked~.check::before {
 }
 
 .joke-text {
-    float: left;
-    margin: 0 40px 40px 100px;
+    margin: 0 40px 40px 0;
+    overflow: hidden;
 }
 
 .time {
@@ -268,13 +267,14 @@ input[type=radio]:checked~.check::before {
     line-height: 14px;
     color: #ABABAB;
     clear: left;
-    margin-left: 100px;
     padding-bottom: 40px;
 }
 
-/* #animal-joke {
+.animal-joke {
     background-color: #fff;
-} */
+    padding-right: 10px;
+    padding-left: 10px;
+}
 
 .category {
     float: right;
@@ -285,7 +285,6 @@ input[type=radio]:checked~.check::before {
     background: #F8F8F8;
     flex: 0 2 400px;
     padding: 40px;
-    /* height: 100vh; */
 }
 
 .favorite-h {
