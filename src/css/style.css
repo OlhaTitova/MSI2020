@@ -94,8 +94,6 @@ ul li label {
     display: block;
     position: relative;
     padding: 2.5px 2.5px 2.5px 35px;
-    /* padding-left: 35px; */
-    /* margin: 2.5px auto; */
     z-index: 9;
     cursor: pointer;
 }
@@ -203,11 +201,6 @@ input[name=radios]:checked~.check::before {
     align-items: flex-end;
     margin-top: 40px;
     margin-right: 40px;
-
-}
-
-.heart-full {
-    fill: #FF6767;
 }
 
 .sms-main {
@@ -223,7 +216,7 @@ input[name=radios]:checked~.check::before {
     margin-top: 11px;
     margin-left: 10px;
     line-height: 0;
-    width: 20px;
+    width: 40px;
 }
 
 .line1,
@@ -246,11 +239,15 @@ input[name=radios]:checked~.check::before {
 }
 
 .link-id {
-    font-weight: 500;
+    font-weight: 400;
     font-size: 10px;
     line-height: 14px;
     color: #ABABAB;
     margin: 0 0 5px 0;
+}
+
+.link-id a {
+    color: #7291FF;
 }
 
 .img-id {
@@ -259,35 +256,37 @@ input[name=radios]:checked~.check::before {
 
 .joke-text {
     margin: 0 40px 40px 0;
-    overflow: hidden;
+    overflow: auto;
+    max-width: 530px;
 }
 
-.time {
+.time-box {
     font-size: 10px;
     line-height: 14px;
     color: #ABABAB;
-    clear: left;
-    padding-bottom: 40px;
+    /* clear: left; */
+    /* padding-bottom: 40px; */
+    display: flex;
+    justify-content: space-between;
 }
 
-.animal-joke {
+.category-joke {
     background-color: #fff;
     padding-right: 10px;
     padding-left: 10px;
 }
 
 .category {
-    float: right;
     margin: 0 40px 40px 0;
 }
 
-.aside {
+.aside-favorite {
     background: #F8F8F8;
     flex: 0 2 400px;
     padding: 40px;
 }
 
-.favorite-h {
+.favorite-heading {
     color: #ABABAB;
     font-weight: 500;
     font-size: 20px;
@@ -311,6 +310,15 @@ input[name=radios]:checked~.check::before {
     left: 20px;
 }
 
+.heard-wrap-favor {
+    margin-top: 20px;
+    margin-right: 20px;
+}
+
+.sms-main-favorite {
+    margin-left: 20px;
+}
+
 .line4,
 .line5,
 .line6 {
@@ -330,22 +338,14 @@ input[name=radios]:checked~.check::before {
     margin-top: 9px;
 }
 
-#heart-favorite {
-    margin: 20px 20px 0 0;
-}
-
-.favorite-id {
-    margin: 47px 0 5px 80px;
-}
-
 .favorite-text {
-    margin: 0 20px 20px 80px;
+    margin: 0 20px 20px 0;
     font-size: 14px;
     line-height: 20px;
+    width: 250px;
 }
 
 .favorite-time {
-    margin-left: 80px;
     padding-bottom: 20px;
 }
 
@@ -367,7 +367,7 @@ input[name=radios]:checked~.check::before {
         border-width: 0;
     }
 
-    .aside {
+    .aside-favorite {
         display: none;
     }
 
