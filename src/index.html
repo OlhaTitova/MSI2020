@@ -9,92 +9,82 @@
 </head>
 
 <body>
-  <div class="page">
-    <div class="main-container">
+  <div class="site">
+    <div class="page">
+      <!-- <div class="page-black"> -->
       <div class="container">
 
-        <header>
-          <!-- <div class="container"> -->
-          <div class="header">
-            <h3 class="logo">MSI 2020</h3>
-            <div>
-              <img src="img/list.svg" class="img-favorit-toggle" alt="favorite-toggle">
-              <button class="favorite-toggle">Favorite</button>
-            </div>
-            <!-- </div> -->
+        <header class="header">
+          <h3 class="logo">MSI 2020</h3>
+
+          <div class="hamburger-menu">
+
+            <input id="menu__toggle" type="checkbox" />
+            <label class="menu__btn" for="menu__toggle">
+              <div class="menu__btn-wrapper">
+                <div class="menu__btn-black">
+                </div>
+                <p class="menu__heading">Favorite</p>
+              </div>
+              <span></span>
+            </label>
+
+            <aside class="menu__box">
+
+            </aside>
+
           </div>
         </header>
 
         <main>
-          <!-- <div class="container"> -->
-          <section>
-            <h1>Hey!</h1>
-            <h2>Let's try to find a joke for you:</h2>
-            <form action="">
-              <ul id="joke-search-list">
-                <li>
-                  <input type="radio" id="random" name="radios" checked="true">
-                  <label for="random">Random</label>
-                  <div class="check"></div>
-                </li>
-                <li>
-                  <input type="radio" id="categories" name="radios">
-                  <label for="categories">From categories</label>
-                  <div class="check"></div>
-                </li>
-                <!-------- Radios as button--->
-                <div id="choice-category" hidden></div>
-                <!---------------------------->
-                <li>
-                  <input type="radio" id="search" name="radios">
-                  <label for="search">Search</label>
-                  <div class="check"></div>
-                </li>
+          <h1>Hey!</h1>
+          <h2>Let's try to find a joke for you:</h2>
+          <form action="">
+            <ul id="joke-search-list">
+              <li>
+                <input type="radio" id="random" name="radios" checked="true">
+                <label for="random">Random</label>
+                <div class="check"></div>
+              </li>
+              <li>
+                <input type="radio" id="categories" name="radios">
+                <label for="categories">From categories</label>
+                <div class="check"></div>
+              </li>
+              <!-------- Radios as button--->
+              <div id="choice-category" hidden></div>
+              <!---------------------------->
+              <li>
+                <input type="radio" id="search" name="radios">
+                <label for="search">Search</label>
+                <div class="check"></div>
+              </li>
 
-                <div id="choice-search" hidden>
-                  <form action="" method="post">
-                    <input class="search" type="search" id="searchField" placeholder="Free text search...">
-                  </form>
-                </div>
-              </ul>
+              <div id="choice-search" hidden>
+                <form action="" method="post">
+                  <input class="search" type="search" id="searchField" placeholder="Free text search...">
+                </form>
+              </div>
+            </ul>
 
-              <button id="btnGetJoke" class="btn-get" type="submit">
-                Get a joke
-              </button>
+            <button id="btnGetJoke" class="btn-get" type="submit">
+              Get a joke
+            </button>
 
-              <div id="row"></div>
-            </form>
+            <div id="row"></div>
+          </form>
 
-          </section>
+        </main>
       </div>
-      </main>
+
+      <aside class="aside-favorite">
+        <p class="favorite-heading">Favorite</p>
+
+      </aside>
+      <!-- </div> -->
     </div>
-    <aside class="aside-favorite">
-      <h3 class="favorite-heading">Favorite</h3>
-
-      <!-- <div class="favorite-joke">
-        <img src="img/heart.svg" height="17" weight="20" alt="Heart">
-        <div class="sms-main background-color">
-          <div class="sms">
-            <img src="img/sms.svg" alt="sms">
-            <img class="line4" src="img/line1.svg" alt="line1">
-            <img class="line5" src="img/line2.svg" alt="line2">
-            <img class="line6" src="img/line3.svg" alt="line3">
-          </div>
-        </div>
-        <div class="link-id favorite-id">ID: 2222222222222222 <img class=img-id src="img/icon-open-page.svg" height="10"
-            weight="10"></div>
-        <div class="joke-text favorite-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi doloribus
-          cupiditate repellat quaerat!</div>
-        <div class="time favorite-time">Last update: 1923 hours ago
-        </div>
-      </div> -->
-
-
-    </aside>
+    <script src="./js/main.js"></script>
   </div>
-
-  <script src="./js/main.js"></script>
 </body>
 
 </html>
