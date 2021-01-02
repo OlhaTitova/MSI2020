@@ -532,12 +532,13 @@ input[name=radios]:checked~.check::before {
     .wrapper-black {
         display: none;
     }
+}
 
-    /* MEDIA-FOR-MIN_SCREEN */
+/* MEDIA-FOR-MIN_SCREEN */
 
-    @media screen and (max-width: 400px) {
+@media screen and (max-width: 400px) {
 
-        .site {
-            width: 400px;
-        }
+    .site {
+        width: 400px;
     }
+}
