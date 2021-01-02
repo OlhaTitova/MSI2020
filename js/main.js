@@ -29,10 +29,7 @@ document.addEventListener('keydown', (e) => {
 });
 
 menuToggle.addEventListener ('click', (e) =>{
-    // const blackWrapper = document.createElement('div');
     blackWrapper.classList.toggle('wrapper-black');
-
-    // page.classList.toggle('wrapper-black');
 })
 
 // Response for Jokes

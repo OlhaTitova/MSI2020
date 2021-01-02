@@ -450,7 +450,6 @@ input[name=radios]:checked~.check::before {
 
 @media (min-width: 768px) and (max-width: 992px) {
 
-
     .container {
         min-width: 768px;
         max-width: 991px;
@@ -467,10 +466,7 @@ input[name=radios]:checked~.check::before {
 
     .wrapper-black {
         right: 400px;
-
     }
-
-
 }
 
 /* MEDIA-FOR-DESKTOP */
@@ -532,12 +528,13 @@ input[name=radios]:checked~.check::before {
     .wrapper-black {
         display: none;
     }
+}
 
-    /* MEDIA-FOR-MIN_SCREEN */
+/* MEDIA-FOR-MIN_SCREEN */
 
-    @media screen and (max-width: 400px) {
+@media screen and (max-width: 400px) {
 
-        .site {
-            width: 400px;
-        }
+    .site {
+        width: 400px;
     }
+}
