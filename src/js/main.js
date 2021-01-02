@@ -9,6 +9,7 @@ const listBtnChoice = document.body.querySelector('#joke-search-list')
 const searchField = document.body.querySelector('#searchField')
 const menuToggle = document.body.querySelector('#menu__toggle');
 const page = document.body.querySelector('.page');
+const blackWrapper = document.body.querySelector('#black-wrapper');
 
 
 btnCategory.addEventListener('click', () => {
@@ -28,7 +29,10 @@ document.addEventListener('keydown', (e) => {
 });
 
 menuToggle.addEventListener ('click', (e) =>{
-    page.classList.toggle('wrapper-black');
+    // const blackWrapper = document.createElement('div');
+    blackWrapper.classList.toggle('wrapper-black');
+
+    // page.classList.toggle('wrapper-black');
 })
 
 // Response for Jokes
