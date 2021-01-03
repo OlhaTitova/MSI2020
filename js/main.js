@@ -28,9 +28,9 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
-menuToggle.addEventListener ('click', (e) =>{
+menuToggle.addEventListener ('click', () =>{
     blackWrapper.classList.toggle('wrapper-black');
-})
+});
 
 // Response for Jokes
 
