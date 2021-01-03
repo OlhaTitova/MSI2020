@@ -62,7 +62,7 @@ h2 {
 
 .container {
     max-width: 767px;
-    min-width: 375px;
+    min-width: 400px;
     margin: 0 auto;
     padding: 20px;
 }
@@ -264,8 +264,9 @@ input[name=radios]:checked~.check::before {
 
 .joke-text {
     margin: 0 40px 0 0;
-    overflow: auto;
+    min-width: 225px;
     max-width: 530px;
+    word-break: break-all;
 }
 
 .time-box {
@@ -341,7 +342,7 @@ input[name=radios]:checked~.check::before {
     margin: 0 20px 20px 0;
     font-size: 14px;
     line-height: 20px;
-    min-width: 204px;
+    width: 204px;
 }
 
 .aside-favorite {
@@ -541,6 +542,7 @@ input[name=radios]:checked~.check::before {
     .wrapper-black {
         display: none;
     }
+
 }
 
 /* MEDIA-FOR-MIN_SCREEN */
