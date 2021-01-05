@@ -1,6 +1,7 @@
 'use strict';
 const btnGetJoke = document.body.querySelector('#btnGetJoke');
-const listCategory = document.body.querySelector('#choice-category')
+const listCategory = document.body.querySelector('#choice-category');
+const fieldSearch = document.querySelector('#choice-search');
 const btnCategory = document.querySelector('#categories');
 const btnSearch = document.querySelector('#search');
 const btnRandom = document.body.querySelector('#random');
@@ -11,15 +12,21 @@ const menuToggle = document.body.querySelector('#menu__toggle');
 const page = document.body.querySelector('.page');
 const blackWrapper = document.body.querySelector('#black-wrapper');
 
+btnRandom.addEventListener('click', () => {
+    fieldSearch.classList.remove('show');
+    listCategory.classList.remove('show');
+})
 
 btnCategory.addEventListener('click', () => {
-    listCategory.classList.toggle('show');
+    fieldSearch.classList.remove('show');
+    listCategory.classList.add('show');
     listCategory.innerHTML = '';
     getCategory();
 });
 
 btnSearch.addEventListener('click', () => {
-  document.querySelector('#choice-search').classList.toggle('show');
+    listCategory.classList.remove('show');
+    fieldSearch.classList.add('show');
 });
 
 document.addEventListener('keydown', (e) => {
@@ -39,6 +46,7 @@ listBtnChoice.addEventListener('click', (e) => {
     selectedRadioBTN.setAttribute('checked', 'false');
     e.target.setAttribute('checked', 'true');
 });
+
  
 btnGetJoke.addEventListener('click', async () => {
     if (btnRandom.checked){
@@ -130,7 +138,8 @@ async function getCategory() {
                     <input type="radio" name="option" id="${categoryName}" value="${categoryName}"></input>
                     <label for="${categoryName}">${categoryName}</label>
                  `;
-        listCategory.appendChild(categoriesWrap);   
+        listCategory.appendChild(categoriesWrap);
+        listCategory.querySelector('input').setAttribute('checked', 'true');
     });  
 return categoriesName;
 }
@@ -148,6 +157,7 @@ async function getJokeSearch () {
 }
 
 function renderJoke(joke) {
+
   return   `<div class="joke" id="${joke.id}">
                 <div class="heard-wrap">
                     <svg id="${joke.id}" width="20" height="17" fill="none" viewBox="0 0 20 17" xmlns="http://www.w3.org/2000/svg">
@@ -164,11 +174,11 @@ function renderJoke(joke) {
                         </div>
                     </div>
                     <div>
-                        <div class="link-id">ID: <a href="#"> ${joke.id}</a><img class=img-id src="img/icon-open-page.svg" height="10"
+                        <div class="link-id">ID: <a href="${joke.url}"> ${joke.id}</a><img class=img-id src="img/icon-open-page.svg" height="10"
                           weight="10">
                         </div>
                         <div class="joke-text">${joke.value}</div>
-                        <div class="time-box"><span class="time">Last update: ${joke.created_at}</span>
+                        <div class="time-box"><span class="time">Last update: ${getNumberOfHoursRemaining(joke)} hours ago</span>
                         ${renderCategoryField(joke)}
                         </div>
                     </div>
@@ -213,4 +223,11 @@ function renderFavoriteJoke (id, text, time) {
             </div>
         </div>
    `
+}
+
+function  getNumberOfHoursRemaining (joke) {
+    const createAt = Date.parse(joke.created_at);
+    let dateNow = Date.now();
+    let numberOfHours = Math.floor((dateNow - createAt)/ 1000 / 60 / 60);
+    return numberOfHours; 
 }
