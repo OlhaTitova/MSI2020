@@ -11,6 +11,9 @@ const searchField = document.body.querySelector('#searchField')
 const menuToggle = document.body.querySelector('#menu__toggle');
 const page = document.body.querySelector('.page');
 const blackWrapper = document.body.querySelector('#black-wrapper');
+const error = document.createElement('p');
+error.innerText = "Заполните поле для поиска";
+error.className = 'error';
 
 btnRandom.addEventListener('click', () => {
     fieldSearch.classList.remove('show');
@@ -45,6 +48,9 @@ listBtnChoice.addEventListener('click', (e) => {
     const selectedRadioBTN = listBtnChoice.querySelector('[checked="true"]');
     selectedRadioBTN.setAttribute('checked', 'false');
     e.target.setAttribute('checked', 'true');
+    console.log(selectedRadioBTN);
+
+    deleteItem ('.error');
 });
 
  
@@ -106,16 +112,17 @@ btnGetJoke.addEventListener('click', async () => {
 
 
 async function getJokeRandom() {
-  const response = await fetch('https://api.chucknorris.io/jokes/random');
-  const joke = await response.json();
-  const cell = document.createElement('div');
-  cell.innerHTML = renderJoke(joke);
-  row.prepend(cell);
+    
+    const response = await fetch('https://api.chucknorris.io/jokes/random');
+    const joke = await response.json();
+    const cell = document.createElement('div');
+    cell.innerHTML = renderJoke(joke);
+    row.prepend(cell);
 }
 
 
 async function getJokeCategory() {
-
+   
     let categoryId = document.querySelector('input[name="option"]:checked').value;
     const response = await fetch(`https://api.chucknorris.io/jokes/random?category=${categoryId}`);
     const joke = await response.json();
@@ -146,14 +153,36 @@ return categoriesName;
 
 async function getJokeSearch () {
 
-    const response = await fetch (`https://api.chucknorris.io/jokes/search?query=${searchField.value}`)
-    const data = await response.json();
+   
+    const warning = document.createElement('p');
+    warning.innerText = "Пожалуйста, введите от 3 до 120 символов";
+    warning.className = 'error';
 
-    data.result.forEach(joke => {
-        const cell = document.createElement('div');
-        cell.innerHTML = renderJoke(joke);
-        row.prepend(cell);
-    });
+    deleteItem ('.error');
+
+    if (searchField.value === '') {
+        btnGetJoke.after(error);
+    }
+    
+    if (searchField.value){
+
+        if(searchField.value.length < 3) {
+            btnGetJoke.after(warning);
+        } else {
+         
+            const response = await fetch (`https://api.chucknorris.io/jokes/search?query=${searchField.value}`);
+            const data = await response.json();
+            
+            data.result.forEach(joke => {
+
+                const cell = document.createElement('div');
+                cell.innerHTML = renderJoke(joke);
+                row.prepend(cell);
+            });   
+        } 
+    }
+
+    
 }
 
 function renderJoke(joke) {
@@ -230,4 +259,9 @@ function  getNumberOfHoursRemaining (joke) {
     let dateNow = Date.now();
     let numberOfHours = Math.floor((dateNow - createAt)/ 1000 / 60 / 60);
     return numberOfHours; 
+}
+
+function deleteItem (selector) {
+    const itemToRemove = document.querySelector(selector);
+    itemToRemove ? itemToRemove.remove() : null;
 }

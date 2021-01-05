@@ -44,26 +44,30 @@
             <ul id="joke-search-list">
               <li>
                 <input type="radio" id="random" name="radios" checked="true">
-                <label for="random">Random</label>
-                <div class="check"></div>
+                <label for="random">Random
+                  <div class="check"></div>
+                </label>
               </li>
               <li>
                 <input type="radio" id="categories" name="radios">
-                <label for="categories">From categories</label>
-                <div class="check"></div>
+                <label for="categories">From categories
+                  <div class="check"></div>
+                </label>
               </li>
               <!-------- Radios as button--->
               <div id="choice-category" hidden></div>
               <!---------------------------->
               <li>
                 <input type="radio" id="search" name="radios">
-                <label for="search">Search</label>
-                <div class="check"></div>
+                <label for="search">Search
+                  <div class="check"></div>
+                </label>
               </li>
 
               <div id="choice-search" hidden>
                 <form action="" method="post">
-                  <input class="search" type="search" id="searchField" placeholder="Free text search...">
+                  <input class="search" type="search" id="searchField" placeholder="Free text search..." required
+                    minlength="3" maxlength="120">
                 </form>
               </div>
             </ul>
