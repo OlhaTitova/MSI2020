@@ -48,11 +48,8 @@ listBtnChoice.addEventListener('click', (e) => {
 
     if(e.target.nodeName.toLowerCase() === 'input') {
         listBtnChoice.querySelector('[checked="true"]').setAttribute('checked', false);
-
         e.target.setAttribute('checked', true);
-        console.log(e.target);
     }
-
     deleteItem ('.error');
 });
 
@@ -142,7 +139,7 @@ async function getCategory() {
         const response = await fetch('https://api.chucknorris.io/jokes/categories');
         categoriesName = await response.json();
     }
-    
+
     categoriesName.forEach(categoryName => {
         const categoriesWrap = document.createElement('div');
         categoriesWrap.classList.add('wrap-category');

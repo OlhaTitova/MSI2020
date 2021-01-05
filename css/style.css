@@ -548,7 +548,6 @@ input[name=radios]:checked~.check::before {
     .wrapper-black {
         display: none;
     }
-
 }
 
 /* MEDIA-FOR-MIN_SCREEN */
