@@ -45,10 +45,13 @@ menuToggle.addEventListener ('click', () =>{
 // Response for Jokes
 
 listBtnChoice.addEventListener('click', (e) => {
-    const selectedRadioBTN = listBtnChoice.querySelector('[checked="true"]');
-    selectedRadioBTN.setAttribute('checked', 'false');
-    e.target.setAttribute('checked', 'true');
-    console.log(selectedRadioBTN);
+
+    if(e.target.nodeName.toLowerCase() === 'input') {
+        listBtnChoice.querySelector('[checked="true"]').setAttribute('checked', false);
+
+        e.target.setAttribute('checked', true);
+        console.log(e.target);
+    }
 
     deleteItem ('.error');
 });
@@ -131,12 +134,15 @@ async function getJokeCategory() {
     row.prepend(cell);
 }
 
+let categoriesName = null;
 
 async function getCategory() {
-
-    const response = await fetch('https://api.chucknorris.io/jokes/categories');
-    const categoriesName = await response.json();
-  
+    
+    if(categoriesName === null) { 
+        const response = await fetch('https://api.chucknorris.io/jokes/categories');
+        categoriesName = await response.json();
+    }
+    
     categoriesName.forEach(categoryName => {
         const categoriesWrap = document.createElement('div');
         categoriesWrap.classList.add('wrap-category');
@@ -147,13 +153,13 @@ async function getCategory() {
                  `;
         listCategory.appendChild(categoriesWrap);
         listCategory.querySelector('input').setAttribute('checked', 'true');
-    });  
-return categoriesName;
+    }); 
+ 
+
+    return categoriesName;
 }
 
-async function getJokeSearch () {
-
-   
+async function getJokeSearch () {   
     const warning = document.createElement('p');
     warning.innerText = "Пожалуйста, введите от 3 до 120 символов";
     warning.className = 'error';
@@ -169,20 +175,16 @@ async function getJokeSearch () {
         if(searchField.value.length < 3) {
             btnGetJoke.after(warning);
         } else {
-         
             const response = await fetch (`https://api.chucknorris.io/jokes/search?query=${searchField.value}`);
             const data = await response.json();
             
             data.result.forEach(joke => {
-
                 const cell = document.createElement('div');
                 cell.innerHTML = renderJoke(joke);
                 row.prepend(cell);
             });   
         } 
     }
-
-    
 }
 
 function renderJoke(joke) {

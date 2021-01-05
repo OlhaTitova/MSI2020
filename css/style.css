@@ -136,11 +136,11 @@ ul li label .check::before {
     margin: auto;
 }
 
-input[name=radios]:checked~label .check {
+input[name=radios]:checked~.check {
     border: 2px solid #333;
 }
 
-input[name=radios]:checked~label .check::before {
+input[name=radios]:checked~.check::before {
     background: #333;
 }
 
